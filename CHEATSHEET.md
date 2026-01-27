@@ -458,7 +458,37 @@ Working Tree
 → Tag
 
 ==================================================
+✅ Local merge (if you prefer CLI)
+===============
+
+From Git Bash:
+
+git checkout main
+git pull origin main
+git merge testing_continued
+git push origin main
+
+
+Then optionally delete the branch:
+
+git branch -d testing_continued
+git push origin --delete testing_continued
+
+⚠️ If main moved while you were working
+
+Rebase before merging (cleaner history):
+
+git checkout testing_continued
+git fetch origin
+git rebase origin/main
+git checkout main
+git merge testing_continued
+git push origin main
+
+
+==================================================
 🏁 END
 ======
+
 
 
